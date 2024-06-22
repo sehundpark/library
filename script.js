@@ -55,6 +55,7 @@ function displayBooks() {
     };
 
     const removeButton = document.createElement('button');
+    removeButton.classList.add('remove-button');
     removeButton.textContent = 'Remove';
     removeButton.onclick = () => {
       removeBook(index);

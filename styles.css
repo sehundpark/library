@@ -11,11 +11,25 @@ body {
 
 .header-section {
     display: flex;
-    justify-content: space-between;
+    position: relative;
+    justify-content: center;
+    align-items: center;
     padding: 15px;
     margin: 15px;
     grid-column: 1 / 7;
     grid-row: 1 / 2;
+}
+
+.header-text {
+    padding: 15px;
+}
+
+.new-book-btn {
+    position: absolute;
+    right: 30px;
+    border-radius: 15px;
+    height: 40px;
+    padding: 10px;
 }
 
 .main-body {
@@ -29,10 +43,12 @@ body {
     grid-column: 1 / 7;
     grid-row: 2 / 7;
     justify-content: start;
+    background-color: #0f0100;
+    background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
 }
 
 .book {
-    width: 250px;
+    width: 200px;
     height: 250px;
     border: 1px solid black;
     padding: 15px;
@@ -41,6 +57,12 @@ body {
     position: relative;
     text-align: center;
     overflow: hidden;
+    background-color: rgb(88, 130, 207);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 12px 0px rgb(10, 67, 173) inset;
 }
 
 .book .info {
@@ -48,6 +70,11 @@ body {
     flex-direction: column;
     flex-grow: 1;
     justify-content: space-between; /* Ensures no overlap */
+    padding-left: 12px;
+}
+
+.book .remove-button {
+    margin-left: 12px;
 }
 
 .book .pages-read {
@@ -63,7 +90,6 @@ body {
     align-items: center;
     margin-bottom: 50px;
     flex-grow: 1;
-
 }
 
 .book .title, .book .author {
@@ -95,6 +121,34 @@ body {
     transform: translate(-50%, -50%);
     padding: 20px;
     background: white;
-    border: solid 1px black;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: solid 2px black;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+#new-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#new-book-form > label {
+    font-size: 18px;
+}
+
+#new-book-form > input {
+    height: 1.2rem;
+}
+
+#read-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#read-container > label {
+    font-size: 18px;
+}
+
+.submit-button {
+    margin: 10px 0;
+    height: 2rem;
 }
