@@ -1,0 +1,100 @@
+html, body {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    display: grid;
+    grid-template: repeat(6, 1fr) / repeat(6, 1fr);
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 15px;
+    grid-column: 1 / 7;
+    grid-row: 1 / 2;
+}
+
+.main-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-auto-rows: 250px;
+    grid-gap: 60px;
+    padding: 15px;
+    margin: 15px;
+    border: solid 1px black;
+    grid-column: 1 / 7;
+    grid-row: 2 / 7;
+    justify-content: start;
+}
+
+.book {
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.book .info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between; /* Ensures no overlap */
+}
+
+.book .pages-read {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book .title-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    flex-grow: 1;
+
+}
+
+.book .title, .book .author {
+    margin: 5px 0;
+}
+
+.book .title {
+    font-size: 28px;
+}
+
+.book .author {
+    font-size: 20px;
+}
+
+.book .read-icon {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: white;
+    border: solid 1px black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
