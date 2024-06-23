@@ -48,7 +48,7 @@ function displayBooks() {
 
     const readIcon = document.createElement('img');
     readIcon.classList.add('read-icon');
-    readIcon.src = book.read ? '/images/read.svg' : '/images/alpha-x-box-outline.svg';
+    readIcon.src = book.read ? '/library/images/read.svg' : '/library/images/alpha-x-box-outline.svg';
     readIcon.alt = book.read ? 'Read' : 'Unread';
     readIcon.onclick = () => {
       toggleReadStatus(index);
