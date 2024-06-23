@@ -18,6 +18,7 @@ body {
     margin: 15px;
     grid-column: 1 / 7;
     grid-row: 1 / 2;
+    background-image: linear-gradient(yellow, green);
 }
 
 .header-text {
@@ -33,25 +34,26 @@ body {
 }
 
 .main-body {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 250px);
-    grid-auto-rows: 250px;
-    grid-gap: 60px;
+    display: flex;
+    flex-wrap: wrap;
     padding: 15px;
     margin: 15px;
     border: solid 1px black;
     grid-column: 1 / 7;
     grid-row: 2 / 7;
-    justify-content: start;
+    gap: 30px;
     background-color: #0f0100;
     background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+    box-sizing: border-box;
+    overflow: auto;
 }
 
 .book {
-    width: 200px;
-    height: 250px;
+    width: 250px;
+    height: 300px;
     border: 1px solid black;
     padding: 15px;
+    margin: 15px; /* Adds spacing around each book */
     display: flex;
     flex-direction: column;
     position: relative;
@@ -63,18 +65,23 @@ body {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     box-shadow: 12px 0px rgb(10, 67, 173) inset;
+    box-sizing: border-box;
 }
 
 .book .info {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: space-between; /* Ensures no overlap */
-    padding-left: 12px;
+    justify-content: space-between;
+    margin-left: 12px;
+    padding: 5px;
+    border: 2px dashed black;
+    background-color: rgb(228, 223, 181);
 }
 
 .book .remove-button {
-    margin-left: 12px;
+    margin-left: 10px;
+    flex-shrink: 0;
 }
 
 .book .pages-read {
@@ -88,20 +95,39 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
     flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0 10px;
 }
 
 .book .title, .book .author {
     margin: 5px 0;
+    width: 100%;
+    text-align: center;
 }
 
 .book .title {
     font-size: 28px;
+    font-weight: bold;
+    flex-shrink: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2; /* Set line height */
+    max-height: calc(1.2em * 3); /* Limit to 4 lines */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* Limits to 4 lines */
+    margin-top: 40px;
 }
 
 .book .author {
     font-size: 20px;
+    flex-shrink: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .book .read-icon {
@@ -151,4 +177,14 @@ body {
 .submit-button {
     margin: 10px 0;
     height: 2rem;
+}
+
+.remove-button {
+    margin-top: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: 30px;
+    background-color: rgb(204, 98, 98);
+    font-size: 16px;
+    font-weight: bold;
 }

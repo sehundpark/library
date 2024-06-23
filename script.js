@@ -56,13 +56,14 @@ function displayBooks() {
 
     const removeButton = document.createElement('button');
     removeButton.classList.add('remove-button');
-    removeButton.textContent = 'Remove';
+    removeButton.textContent = 'Remove Book';
     removeButton.onclick = () => {
       removeBook(index);
     };
 
     titleAuthorDiv.appendChild(title);
     titleAuthorDiv.appendChild(author);
+    titleAuthorDiv.appendChild(removeButton);
 
     pagesReadDiv.appendChild(readIcon);
     pagesReadDiv.appendChild(pages);
@@ -71,7 +72,6 @@ function displayBooks() {
     infoDiv.appendChild(titleAuthorDiv);
 
     bookDiv.appendChild(infoDiv);
-    bookDiv.appendChild(removeButton);
 
     mainBody.appendChild(bookDiv);
   });
