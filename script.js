@@ -48,11 +48,7 @@ function displayBooks() {
 
     const readIcon = document.createElement('img');
     readIcon.classList.add('read-icon');
-<<<<<<< HEAD
-    readIcon.src = book.read ? '/library/images/read.svg' : '/library/images/alpha-x-box-outline.svg';
-=======
     readIcon.src = book.read ? './images/read.svg' : './images/alpha-x-box-outline.svg';
->>>>>>> 5e984668067e9f6adda594ae8d2e9bde677f64c0
     readIcon.alt = book.read ? 'Read' : 'Unread';
     readIcon.onclick = () => {
       toggleReadStatus(index);
@@ -92,7 +88,7 @@ function removeBook(index) {
 }
 
 document.querySelector('.new-book-btn').addEventListener('click', () => {
-  document.getElementById('form-container').classList.toggle('hidden');
+  document.getElementById('backdrop').classList.toggle('hidden');
 });
 
 document.getElementById('new-book-form').addEventListener('submit', (event) => {
